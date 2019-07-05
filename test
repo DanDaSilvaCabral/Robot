@@ -1,6 +1,5 @@
 from robot import *
 
-print getGPS()
-
+cur_bearing()
 
 
