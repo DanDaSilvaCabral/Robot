@@ -1,5 +1,6 @@
 from robot import *
 
-cur_bearing()
+
+takevid()
 
 

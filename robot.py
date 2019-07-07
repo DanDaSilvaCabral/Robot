@@ -12,7 +12,7 @@ def takevid():
 
 	camera = PiCamera()
 
-	camera.resolution = (1024, 768)
+	camera.resolution = (1920, 1080)
 	camera.framerate = 15
 	with open('/home/pi/Desktop/Robot/videos/count', 'r') as f:
 		nb = f.read()
@@ -72,7 +72,8 @@ def cur_bearing():
 			new_pos = getGPS()
 			if new_pos != cur_pos:
 				brng = get_bearing(cur_pos['lat'], new_pos['lat'], cur_pos['lon'], new_pos['lon'])
-				print brng
+				with open('/home/pi/Desktop/Robot/record', 'a') as rec:
+					rec.write(str(brng)+'\n')
 				cur_pos = new_pos
 	except (KeyboardInterrupt, SystemExit):
 		print "Done.\nExiting."
