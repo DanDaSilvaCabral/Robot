@@ -1,6 +1,9 @@
 from robot import *
 
-head_move()
+correct_dir()
+
+# printGPS()
+# head_move()
 # tryvid()
 # circuit()
 # cur_bearing()
