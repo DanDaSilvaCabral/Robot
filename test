@@ -1,6 +1,6 @@
 from robot import *
 
-
-takevid()
-
+tryvid()
+# circuit()
+# cur_bearing()
 
