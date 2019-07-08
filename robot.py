@@ -88,4 +88,24 @@ def cur_bearing(targ_lat = 43.7, targ_lon = 7.26):
 		print "Done.\nExiting."
 
 
+def head_move():
+	MyPin = 21
+	GPIO.setmode(GPIO.BCM)
+	GPIO.setup(MyPin, GPIO.OUT)
 
+	p = GPIO.PWM(MyPin, 50)
+	inter = 0.7
+	frq_min = 2.5
+	frq_max = 12.5
+	p.start(frq_min)
+	time.sleep(inter)
+	try:
+		while True:
+			p.ChangeDutyCycle(frq_max)
+			time.sleep(inter)
+			p.ChangeDutyCycle(frq_min)
+			time.sleep(inter)
+
+	except KeyboardInterrupt:
+		p.stop()
+		GPIO.cleanup()

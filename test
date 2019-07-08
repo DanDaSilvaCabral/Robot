@@ -1,6 +1,7 @@
 from robot import *
 
-tryvid()
+head_move()
+# tryvid()
 # circuit()
 # cur_bearing()
 
